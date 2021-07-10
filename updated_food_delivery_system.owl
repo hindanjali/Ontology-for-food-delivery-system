@@ -1,0 +1,573 @@
+@prefix : <http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2> .
+
+<http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#accepted_by
+:accepted_by rdf:type owl:ObjectProperty ;
+             rdfs:domain :Payment ;
+             rdfs:range :Restaurant .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#generates
+:generates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Order ;
+           rdfs:range :BillingAmount .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#handled_by
+:handled_by rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty ;
+            rdfs:domain :Delivery ;
+            rdfs:range :Delivery_boy .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#has
+:has rdf:type owl:ObjectProperty ,
+              owl:TransitiveProperty ;
+     rdfs:domain :Order ;
+     rdfs:range :Delivery .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#have
+:have rdf:type owl:ObjectProperty ;
+      rdfs:domain :Payment ;
+      rdfs:range :BillingAmount .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#have_order_details
+:have_order_details rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Order ;
+                    rdfs:range :Food .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#pays
+:pays rdf:type owl:ObjectProperty ;
+      rdfs:domain :Customer ;
+      rdfs:range :Payment .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#places
+:places rdf:type owl:ObjectProperty ;
+        rdfs:domain :Customer ;
+        rdfs:range :Order .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#prepared_by
+:prepared_by rdf:type owl:ObjectProperty ;
+             rdfs:domain :Food ;
+             rdfs:range :Restaurant .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Address
+:Address rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Customer ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Arrival_time
+:Arrival_time rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Delivery ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Bill_amount
+:Bill_amount rdf:type owl:DatatypeProperty ;
+             rdfs:domain :BillingAmount ;
+             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Contact_no
+:Contact_no rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Customer ;
+            rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#D_contact
+:D_contact rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Delivery_boy ;
+           rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#D_name
+:D_name rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Delivery_boy ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Delivery_no
+:Delivery_no rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Delivery ;
+             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Departure_time
+:Departure_time rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Delivery ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Description
+:Description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Food ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Email
+:Email rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Customer ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Food_item_name
+:Food_item_name rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Food ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Name
+:Name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Customer ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Payment_option
+:Payment_option rdf:type owl:DatatypeProperty ;
+                rdfs:domain :BillingAmount ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Price
+:Price rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Payment ;
+       rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Quantity
+:Quantity rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Food ;
+          rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#R_address
+:R_address rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Restaurant ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#R_contact
+:R_contact rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Restaurant ;
+           rdfs:range xsd:long .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#R_name
+:R_name rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Restaurant ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Time
+:Time rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Order ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#f_price
+:f_price rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Food ;
+         rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#BillingAmount
+:BillingAmount rdf:type owl:Class ;
+               rdfs:subClassOf :Order .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Customer
+:Customer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Delivery
+:Delivery rdf:type owl:Class ;
+          rdfs:subClassOf :Order .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Delivery_boy
+:Delivery_boy rdf:type owl:Class ;
+              rdfs:subClassOf :Delivery .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Food
+:Food rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Order
+:Order rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Payment
+:Payment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#Restaurant
+:Restaurant rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#b001
+:b001 rdf:type owl:NamedIndividual ,
+               :BillingAmount ;
+      :Bill_amount 236 ;
+      :Payment_option "cash" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#b002
+:b002 rdf:type owl:NamedIndividual ,
+               :BillingAmount ;
+      :Bill_amount 515 ;
+      :Payment_option "online" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#b003
+:b003 rdf:type owl:NamedIndividual ,
+               :BillingAmount .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#b004
+:b004 rdf:type owl:NamedIndividual ,
+               :BillingAmount .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#b005
+:b005 rdf:type owl:NamedIndividual ,
+               :BillingAmount .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#c001
+:c001 rdf:type owl:NamedIndividual ,
+               :Customer ;
+      :pays :p001 ;
+      :places :o001 ;
+      :Address "C-404, Guwahati, Assam"^^xsd:string ;
+      :Contact_no "9867354216"^^xsd:long ;
+      :Email "piyush@gmail.com"^^xsd:string ;
+      :Name "Piyush"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#c002
+:c002 rdf:type owl:NamedIndividual ,
+               :Customer ;
+      :pays :p002 ;
+      :places :o002 ;
+      :Address "d-23, Jabalpur, Madhya Pradesh" ;
+      :Contact_no 5467354263 ;
+      :Email "hindanjali@gmail.com" ;
+      :Name "Hindanjali" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#c003
+:c003 rdf:type owl:NamedIndividual ,
+               :Customer ;
+      :pays :p003 ;
+      :places :o003 ;
+      :Address "h-34, Surat, Gujarat" ;
+      :Contact_no 8798764543 ;
+      :Email "shashank@gmail.com" ;
+      :Name "Shashank" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#c004
+:c004 rdf:type owl:NamedIndividual ,
+               :Customer ;
+      :pays :p004 ;
+      :places :o004 ;
+      :Address "IITM campus, Chennai" ;
+      :Contact_no 7654567898 ;
+      :Email "abdul@smail.iitm.ac.in" ;
+      :Name "Abdul" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#c005
+:c005 rdf:type owl:NamedIndividual ,
+               :Customer ;
+      :pays :p005 ;
+      :places :o005 ;
+      :Address "Bandra, Mumbai" ;
+      :Contact_no 8997658877 ;
+      :Email "piyush@gmail.com" ;
+      :Name "Emraan" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#chicken_biryani
+:chicken_biryani rdf:type owl:NamedIndividual ,
+                          :Food ;
+                 :prepared_by :r001 ;
+                 :Food_item_name "Chicken Biryani" ;
+                 :Quantity 1 ;
+                 :f_price 149 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#choco_lava
+:choco_lava rdf:type owl:NamedIndividual ,
+                     :Food ;
+            :Food_item_name "Choco Lava Pastry" ;
+            :Quantity 3 ;
+            :f_price 50 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#chole_bhature
+:chole_bhature rdf:type owl:NamedIndividual ,
+                        :Food ;
+               :prepared_by :r001 ;
+               :Food_item_name "chole bhature" ;
+               :Quantity "2"^^xsd:int ;
+               :f_price 80 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#d001
+:d001 rdf:type owl:NamedIndividual ,
+               :Delivery_boy ;
+      :D_contact 9809897689 ;
+      :D_name "Sahil" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#d002
+:d002 rdf:type owl:NamedIndividual ,
+               :Delivery_boy ;
+      :D_contact 8149611014 ;
+      :D_name "Rohit" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#dy001
+:dy001 rdf:type owl:NamedIndividual ,
+                :Delivery ;
+       :handled_by :d001 ;
+       :Arrival_time "2018-01-01T13:00:00Z" ;
+       :Departure_time "2018-01-01T13:00:00Z" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#dy002
+:dy002 rdf:type owl:NamedIndividual ,
+                :Delivery ;
+       :handled_by :d002 ;
+       :Arrival_time "2018-01-01T15:00:00" ;
+       :Departure_time "2018-01-01T14:30:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#dy003
+:dy003 rdf:type owl:NamedIndividual ,
+                :Delivery ;
+       :handled_by :d001 ;
+       :Arrival_time "2018-01-01T18:00:00" ;
+       :Departure_time "2018-01-01T17:30:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#dy004
+:dy004 rdf:type owl:NamedIndividual ,
+                :Delivery ;
+       :handled_by :d002 ;
+       :Arrival_time "2018-01-01T15:30:00" ;
+       :Departure_time "2018-01-01T14:30:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#dy005
+:dy005 rdf:type owl:NamedIndividual ,
+                :Delivery ;
+       :handled_by :d002 ;
+       :Arrival_time "2018-01-01T16:00:00" ;
+       :Departure_time "2018-01-01T15:00:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#gulab_jamun
+:gulab_jamun rdf:type owl:NamedIndividual ,
+                      :Food ;
+             :prepared_by :r001 ;
+             :Food_item_name "gulab jamun"^^xsd:string ;
+             :Quantity "5"^^xsd:int ;
+             :f_price "20"^^xsd:int .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#masala_dosa
+:masala_dosa rdf:type owl:NamedIndividual ,
+                      :Food ;
+             :Food_item_name "Masala Dosa" ;
+             :Quantity 4 ;
+             :f_price 35 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#o001
+:o001 rdf:type owl:NamedIndividual ,
+               :Order ;
+      :generates :b001 ;
+      :has :d001 ;
+      :have_order_details :chicken_biryani ,
+                          :chole_bhature ;
+      :Time "2018-01-01T13:00:00Z" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#o002
+:o002 rdf:type owl:NamedIndividual ,
+               :Order ;
+      :generates :b002 ;
+      :has :d002 ;
+      :have_order_details :gulab_jamun ;
+      :Time "2018-01-01T14:00:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#o003
+:o003 rdf:type owl:NamedIndividual ,
+               :Order ;
+      :generates :b003 ;
+      :has :d001 ;
+      :have_order_details :gulab_jamun ,
+                          :masala_dosa ;
+      :Time "2018-01-01T17:00:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#o004
+:o004 rdf:type owl:NamedIndividual ,
+               :Order ;
+      :generates :b004 ;
+      :has :d002 ;
+      :have_order_details :choco_lava ;
+      :Time "2018-01-01T14:00:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#o005
+:o005 rdf:type owl:NamedIndividual ,
+               :Order ;
+      :generates :b005 ;
+      :has :d002 ;
+      :have_order_details :palak_paneer ;
+      :Time "2018-01-01T14:00:00" .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#p001
+:p001 rdf:type owl:NamedIndividual ,
+               :Payment ;
+      :accepted_by :r001 ;
+      :have :b001 ;
+      :Price 200 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#p002
+:p002 rdf:type owl:NamedIndividual ,
+               :Payment ;
+      :accepted_by :r001 ;
+      :have :b002 ;
+      :Price 550 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#p003
+:p003 rdf:type owl:NamedIndividual ,
+               :Payment ;
+      :accepted_by :r001 ;
+      :have :b003 ;
+      :Price 700 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#p004
+:p004 rdf:type owl:NamedIndividual ,
+               :Payment ;
+      :accepted_by :r001 ;
+      :have :b004 ;
+      :Price 768 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#p005
+:p005 rdf:type owl:NamedIndividual ,
+               :Payment ;
+      :accepted_by :r001 ;
+      :have :b005 ;
+      :Price 1560 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#palak_paneer
+:palak_paneer rdf:type owl:NamedIndividual ,
+                       :Food ;
+              :Food_item_name "Palak Paneer" ;
+              :Quantity 1 ;
+              :f_price 100 .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#r001
+:r001 rdf:type owl:NamedIndividual ,
+               :Restaurant ;
+      :R_address "f-32, Jabalpur, Madhya Pradesh" ;
+      :R_contact 9867542313 ;
+      :R_name "Shanti Sagar"^^xsd:string .
+
+
+###  http://www.semanticweb.org/sande/ontologies/2021/4/untitled-ontology-2#r002
+:r002 rdf:type owl:NamedIndividual ,
+               :Restaurant ;
+      :R_address "Kalyan, Thane" ;
+      :R_contact 9988775566 ;
+      :R_name "Barbeque Nation" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :chicken_biryani
+                        :choco_lava
+                        :chole_bhature
+                        :gulab_jamun
+                        :masala_dosa
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :chicken_biryani
+                        :palak_paneer
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :choco_lava
+                        :palak_paneer
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :chole_bhature
+                        :palak_paneer
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :gulab_jamun
+                        :palak_paneer
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

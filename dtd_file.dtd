@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE food_delivery_system[
+<!ELEMENT food_delivery_system (orders, users, restaurants)>
+<!ELEMENT users (user)>
+<!ELEMENT restaurants (restaurant)>
+<!ELEMENT orders (order)>
+<!ELEMENT order (customer, delivery,food,bill)>
+<!ATTLIST order order_id ID #REQUIRED>
+<!ELEMENT customer (name,address,contact_number,email)>
+<!ATTLIST customer user_id ID #REQUIRED>
+<!ELEMENT delivery(delivery_boy)>
+<!ELEMENT food (food_item+)>
+<!ATTLIST restaurant_id ID #REQUIRED>
+<!ELEMENT bill (amount,payment)>
+<!ATTLIST bill bill_number ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (locality,city,pincode)>
+<!ELEMENT contact_number (NUMBER)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT delivery_boy (name,contact_number,rating)>
+<!ATTLIST delivery_boy user_id ID #REQUIRED>
+<!ELEMENT food_item (name,quantity,price)>
+<!ELEMENT user EMPTY >
+<!ATTLIST user user_id ID #REQUIRED user_type(customer|delivery_boy) >
+<!ELEMENT price (NUMBER)>
+<!ELEMENT restaurant (name,menu,feedback,address)>
+<!ATTLIST restaurant_id ID #REQUIRED>
+<!ELEMENT amount (NUMBER)>
+<!ELEMENT payment EMPTY>
+<!ELEMENT rating (NUMBER)>
+<!ELEMENT quantity (NUMBER)>
+<!ELEMENT menu (menu_item) >
+<!ELEMENT feedback (#PCDATA)>
+<!ELEMENT payment EMPTY >
+<!ATTLIST payment mode (online|COD) status(paid|pending)>
+<!ELEMENT menu_item (name,price) >
+<!ELEMENT locality (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT pincode (NUMBER)>
+]>
+
+

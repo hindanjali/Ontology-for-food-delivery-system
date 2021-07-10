@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE food_delivery_system[
+<!ELEMENT food_delivery_system (orders,users,restaurants)>
+<!ELEMENT users (user)*>
+<!ELEMENT restaurants (restaurant+)>
+<!ELEMENT orders (order+)>
+<!ELEMENT order (customer,delivery,food,bill)>
+<!ATTLIST order order_id ID #REQUIRED>
+<!ELEMENT customer (name,address,contact_number,email)>
+<!ATTLIST customer user_id IDREF #REQUIRED>
+<!ELEMENT delivery (delivery_boy)>
+<!ELEMENT food (food_item+)>
+<!ATTLIST food restaurant1_id IDREF #REQUIRED>
+<!ELEMENT bill (amount,payment)>
+<!ATTLIST bill bill_number ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (locality,city,pincode)>
+<!ELEMENT contact_number (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT delivery_boy (name,contact_number,rating)>
+<!ATTLIST delivery_boy user_id IDREF #REQUIRED>
+<!ELEMENT food_item (name,quantity,price)>
+<!ELEMENT user EMPTY>
+<!ATTLIST user user_id ID #REQUIRED user_type (customer | delivery_boy) "customer" >
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT restaurant (name,menu,feedback,address)>
+<!ATTLIST restaurant restaurant_id ID #REQUIRED>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT payment EMPTY>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT menu (menu_item+) >
+<!ELEMENT feedback (#PCDATA)>
+<!ATTLIST payment mode (online | COD) "COD" status (paid | pending) "pending">
+<!ELEMENT menu_item (name,price) >
+<!ELEMENT locality (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT pincode (#PCDATA)>
+]>
+<food_delivery_system>
+    <orders>
+        <order order_id="o501">
+            <customer user_id="shashank101">
+                <name> Shashank</name>
+                <address>
+                    <locality> abajan apartment </locality>
+                    <city>surat</city>
+                    <pincode>395900</pincode>
+                </address>
+                <contact_number>9123459775</contact_number>
+                <email> shashank@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="rohit434">
+                    <name>rohit</name>
+                    <contact_number> 9856234597</contact_number>
+                    <rating> 5 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest123">
+                <food_item>
+                    <name> dosa </name>
+                    <quantity> 1</quantity>
+                    <price> 80 </price>
+                </food_item>
+                <food_item>
+                    <name> uttapam </name>
+                    <quantity> 2 </quantity>
+                    <price> 100 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b7019">
+                <amount> 280 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o502">
+            <customer user_id="sahil101">
+                <name> Sahil</name>
+                <address>
+                    <locality> Jama masjid </locality>
+                    <city>Delhi</city>
+                    <pincode>110001</pincode>
+                </address>
+                <contact_number>8793459775</contact_number>
+                <email> sahil@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="rohit434">
+                    <name>rohit</name>
+                    <contact_number> 9856234597</contact_number>
+                    <rating> 5 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest456">
+                <food_item>
+                    <name> chicken tandoori </name>
+                    <quantity> 1</quantity>
+                    <price> 270 </price>
+                </food_item>
+                <food_item>
+                    <name> paneer masala </name>
+                    <quantity> 1 </quantity>
+                    <price> 140 </price>
+                </food_item>
+                <food_item>
+                    <name> butter naan </name>
+                    <quantity> 4 </quantity>
+                    <price> 15 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b7020">
+                <amount> 470 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o503">
+            <customer user_id="hindanjali101">
+                <name> Hindanjali</name>
+                <address>
+                    <locality> Vidya Nagar </locality>
+                    <city>Jabalpur</city>
+                    <pincode>482001</pincode>
+                </address>
+                <contact_number>8787559775</contact_number>
+                <email> hindanjali@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="shahrukh434">
+                    <name>rohit</name>
+                    <contact_number> 9859874597</contact_number>
+                    <rating> 4 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest789">
+                <food_item>
+                    <name> chicken noodles </name>
+                    <quantity> 5</quantity>
+                    <price> 140 </price>
+                </food_item>
+                <food_item>
+                    <name> manchurian soup </name>
+                    <quantity> 5 </quantity>
+                    <price> 50 </price>
+                </food_item>
+                <food_item>
+                    <name> chicken lollipop </name>
+                    <quantity> 5 </quantity>
+                    <price> 60 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b7021">
+                <amount> 1250 </amount>
+                <payment mode="COD" status="pending"/>
+            </bill>
+        </order>
+        <order order_id="o504">
+            <customer user_id="abdul101">
+                <name> Abdul</name>
+                <address>
+                    <locality> IIT Madras campus </locality>
+                    <city>Chennai</city>
+                    <pincode>600001</pincode>
+                </address>
+                <contact_number>9093459775</contact_number>
+                <email> abdul@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="priya434">
+                    <name>Priya</name>
+                    <contact_number> 9856904597</contact_number>
+                    <rating> 5 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest112">
+                <food_item>
+                    <name> chicken cheese shwarma </name>
+                    <quantity> 6</quantity>
+                    <price> 120 </price>
+                </food_item>
+                <food_item>
+                    <name> veg momos </name>
+                    <quantity> 3 </quantity>
+                    <price> 100 </price>
+                </food_item>
+                <food_item>
+                    <name> coke 100ml </name>
+                    <quantity> 6 </quantity>
+                    <price> 40 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b7022">
+                <amount> 1260 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o505">
+            <customer user_id="piyush101">
+                <name> Piyush</name>
+                <address>
+                    <locality> Ananda Nagar </locality>
+                    <city>Guwahati</city>
+                    <pincode>781001</pincode>
+                </address>
+                <contact_number>8793459075</contact_number>
+                <email> piyush@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="john434">
+                    <name>John</name>
+                    <contact_number> 9856267597</contact_number>
+                    <rating> 3.5 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest001">
+                <food_item>
+                    <name> Paneer Chilly </name>
+                    <quantity> 2</quantity>
+                    <price> 150 </price>
+                </food_item>
+                <food_item>
+                    <name> paneer masala </name>
+                    <quantity> 1 </quantity>
+                    <price> 140 </price>
+                </food_item>
+                <food_item>
+                    <name> butter naan </name>
+                    <quantity> 4 </quantity>
+                    <price> 15 </price>
+                </food_item>
+                <food_item>
+                    <name> coke 100 ml </name>
+                    <quantity> 5 </quantity>
+                    <price> 40 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b7024">
+                <amount> 700 </amount>
+                <payment mode="COD" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o5021">
+            <customer user_id="ram">
+                <name>Ram</name>
+                <address>
+                    <locality> abc apartment </locality>
+                    <city>pune</city>
+                    <pincode>123405</pincode>
+                </address>
+                <contact_number>9293949591</contact_number>
+                <email>ram@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="navneet">
+                    <name>navneet</name>
+                    <contact_number>6000436586</contact_number>
+                    <rating> 5 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest1241">
+                <food_item>
+                    <name> maggie </name>
+                    <quantity> 1</quantity>
+                    <price> 30 </price>
+                </food_item>
+                <food_item>
+                    <name> noodles </name>
+                    <quantity> 1 </quantity>
+                    <price> 50 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b70121">
+                <amount> 80 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o5031">
+            <customer user_id="shyam">
+                <name>shyam</name>
+                <address>
+                    <locality> xyz colony </locality>
+                    <city>guwahati</city>
+                    <pincode>123406</pincode>
+                </address>
+                <contact_number>8474048681</contact_number>
+                <email>shyam@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="gobind11">
+                    <name>gobind</name>
+                    <contact_number>9192939495</contact_number>
+                    <rating> 3.2 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest1251">
+                <food_item>
+                    <name> biryani </name>
+                    <quantity> 1</quantity>
+                    <price> 150 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b70122">
+                <amount> 150 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o5041">
+            <customer user_id="ghanshyam">
+                <name>ghanshyam</name>
+                <address>
+                    <locality> btm layout </locality>
+                    <city>bangalore</city>
+                    <pincode>123407</pincode>
+                </address>
+                <contact_number>8474048682</contact_number>
+                <email>ghanshyam@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="reshab11">
+                    <name>reshab</name>
+                    <contact_number>9192939487</contact_number>
+                    <rating> 3.8 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest1261">
+                <food_item>
+                    <name> mutton curry </name>
+                    <quantity> 1</quantity>
+                    <price> 450 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b70131">
+                <amount> 450 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o5051">
+            <customer user_id="rajaram">
+                <name> rajaram</name>
+                <address>
+                    <locality> kaushalnagar </locality>
+                    <city>koklata</city>
+                    <pincode>395901</pincode>
+                </address>
+                <contact_number>9123459743</contact_number>
+                <email> rajaram@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="jai38">
+                    <name>jai</name>
+                    <contact_number> 9856234586</contact_number>
+                    <rating> 4.8 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest1271">
+                <food_item>
+                    <name> fish curry </name>
+                    <quantity> 1</quantity>
+                    <price> 300 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b70141">
+                <amount> 300 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+        <order order_id="o5061">
+            <customer user_id="alex13">
+                <name> alex</name>
+                <address>
+                    <locality> dollars colony </locality>
+                    <city>chennai</city>
+                    <pincode>395902</pincode>
+                </address>
+                <contact_number>9123459748</contact_number>
+                <email> alex@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="chelleng38">
+                    <name>chelleng</name>
+                    <contact_number> 9856234580</contact_number>
+                    <rating> 4.9 </rating>
+                </delivery_boy>
+            </delivery>
+            <food restaurant1_id="rest1281">
+                <food_item>
+                    <name> momo </name>
+                    <quantity> 1</quantity>
+                    <price> 120 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b70151">
+                <amount> 300 </amount>
+                <payment mode="online" status="paid"/>
+            </bill>
+        </order>
+    </orders>
+    <users>
+        <user user_id="shashank101" user_type="customer"/>
+        <user user_id="rohit434" user_type="delivery_boy"/>
+        <user user_id="sahil101" user_type="customer"/>
+        <user user_id="hindanjali101" user_type="customer"/>
+        <user user_id="shahrukh434" user_type="delivery_boy"/>
+        <user user_id="priya434" user_type="delivery_boy"/>
+        <user user_id="john434" user_type="delivery_boy"/>
+        <user user_id="abdul101" user_type="customer"/>
+        <user user_id="piyush101" user_type="customer"/>
+        <user user_id="ram" user_type="customer"/>
+        <user user_id="navneet" user_type="delivery_boy"/>
+        <user user_id="shyam" user_type="customer"/>
+        <user user_id="gobind11" user_type="delivery_boy"/>
+        <user user_id="ghanshyam" user_type="customer"/>
+        <user user_id="reshab11" user_type="delivery_boy"/>
+        <user user_id="rajashyam" user_type="customer"/>
+        <user user_id="rajaram" user_type="customer"/>
+        <user user_id="jai38" user_type="delivery_boy"/>
+        <user user_id="alex13" user_type="customer"/>
+        <user user_id="chelleng38" user_type="delivery_boy"/>
+    </users>
+    <restaurants>
+        <restaurant restaurant_id="rest123">
+            <name> Rohit ke bhature </name>
+            <menu>
+                <menu_item>
+                    <name> Chole Bhature</name>
+                    <price> 40</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> new market </locality>
+                <city> surat </city>
+                <pincode> 110009</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest001">
+            <name> Shiv Sagar </name>
+            <menu>
+                <menu_item>
+                    <name> Paneer Chilly</name>
+                    <price> 150</price>
+                </menu_item>
+                <menu_item>
+                    <name> Paneer masala</name>
+                    <price> 140</price>
+                </menu_item>
+                <menu_item>
+                    <name> Paneer Chilly</name>
+                    <price> 150</price>
+                </menu_item>
+                <menu_item>
+                    <name> Butter naan</name>
+                    <price> 15</price>
+                </menu_item>
+                <menu_item>
+                    <name> naan</name>
+                    <price> 10</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> Sadanand Nagar </locality>
+                <city> Guwahati </city>
+                <pincode> 110008</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest112">
+            <name> Chota Taj </name>
+            <menu>
+                <menu_item>
+                    <name> chicken cheese shwarma</name>
+                    <price> 120</price>
+                </menu_item>
+                <menu_item>
+                    <name> veg momos</name>
+                    <price> 100</price>
+                </menu_item>
+                <menu_item>
+                    <name> coke 100 ml</name>
+                    <price> 40</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> main bazar </locality>
+                <city> chennai </city>
+                <pincode> 600002</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest789">
+            <name> Moonland China </name>
+            <menu>
+                <menu_item>
+                    <name> chicken noodles</name>
+                    <price> 140</price>
+                </menu_item>
+                <menu_item>
+                    <name> manchurian soup</name>
+                    <price> 50</price>
+                </menu_item>
+                <menu_item>
+                    <name> chicken lollipop</name>
+                    <price> 60</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> 65 Dukan </locality>
+                <city> jabalpur </city>
+                <pincode> 482001</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest456">
+            <name> The Indian Kitchen </name>
+            <menu>
+                <menu_item>
+                    <name> chicken noodles</name>
+                    <price> 140</price>
+                </menu_item>
+                <menu_item>
+                    <name> manchurian soup</name>
+                    <price> 50</price>
+                </menu_item>
+                <menu_item>
+                    <name> chicken lollipop</name>
+                    <price> 60</price>
+                </menu_item>
+                <menu_item>
+                    <name> chicken tandoori</name>
+                    <price> 270</price>
+                </menu_item>
+                <menu_item>
+                    <name> paneer masala</name>
+                    <price> 140</price>
+                </menu_item>
+                <menu_item>
+                    <name> Butter naan</name>
+                    <price> 15</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> 56 Dukan </locality>
+                <city> jabalpur </city>
+                <pincode> 482001</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest1241">
+            <name> food court </name>
+            <menu>
+                <menu_item>
+                    <name> maggie</name>
+                    <price> 30</price>
+                </menu_item>
+                <menu_item>
+                    <name> noodles</name>
+                    <price> 80</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> pune </locality>
+                <city> pune </city>
+                <pincode> 123405</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest1251">
+            <name> gobind darbar </name>
+            <menu>
+                <menu_item>
+                    <name> biryani</name>
+                    <price> 150</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> gs road </locality>
+                <city> guwahati </city>
+                <pincode> 123406</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest1261">
+            <name> foodles </name>
+            <menu>
+                <menu_item>
+                    <name> mutton curry</name>
+                    <price> 450</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> devinagar </locality>
+                <city> bangalore </city>
+                <pincode> 123407</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest1271">
+            <name> jai food point </name>
+            <menu>
+                <menu_item>
+                    <name> fish curry</name>
+                    <price> 300</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> jp nagar </locality>
+                <city> koklata </city>
+                <pincode> 395901</pincode>
+            </address>
+        </restaurant>
+        <restaurant restaurant_id="rest1281">
+            <name> pkb momos </name>
+            <menu>
+                <menu_item>
+                    <name> momo</name>
+                    <price> 120</price>
+                </menu_item>
+            </menu>
+            <feedback/>
+            <address>
+                <locality> dolars colony </locality>
+                <city> chennai </city>
+                <pincode> 395902</pincode>
+            </address>
+        </restaurant>
+    </restaurants>
+
+</food_delivery_system>

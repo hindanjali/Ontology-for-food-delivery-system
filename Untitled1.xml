@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<!DOCTYPE food_delivery_system SYSTEM "dtd_file.dtd">
+<food_delivery_system>
+    <orders>
+        <order order_id="o501">
+            <customer user_id="shashank101">
+                <name> Shashank</name>
+                <address> 
+                    <locality> abajan apartment </locality>
+                    <city>surat</city>
+                    <pincode>395900</pincode>
+                </address>
+                <contact_number>9123459775</contact_number>
+                <email> shashank@gmail.com</email>
+            </customer>
+            <delivery>
+                <delivery_boy user_id="rohit434">
+                    <name>rohit</name>
+                    <contact> 9856234597</contact>
+                    <rating> 5 </rating>
+                </delivery_boy>     
+            </delivery>
+            <food restaurant_id="rest123">
+                <food_item>
+                    <name> dosa </name>
+                    <quantity> 1</quantity>
+                    <price> 80 </price>
+                </food_item>
+                <food_item>
+                    <name> uttapam </name>
+                    <quantity> 2 </quantity>
+                    <price> 100 </price>
+                </food_item>
+            </food>
+            <bill bill_number="b7019">
+                <amount> 280 </amount>
+                <payment mode="online" status="paid" />
+            </bill>
+        </order>
+    </orders>
+    <users>
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+        <user user_id="" user_type="" />
+    </users>
+    <restaurants>
+        <restaurant>
+            <name> </name>
+            <menu>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+            </menu>
+            <feedback> </feedback>
+            <address>
+                <locality>  </locality>
+                <city> </city>
+                <pincode> </pincode>
+            </address>
+        </restaurant>
+        <restaurant>
+            <name> </name>
+            <menu>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+            </menu>
+            <feedback> </feedback>
+            <address>
+                <locality>  </locality>
+                <city> </city>
+                <pincode> </pincode>
+            </address>
+        </restaurant>
+        <restaurant>
+            <name> </name>
+            <menu>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+            </menu>
+            <feedback> </feedback>
+            <address>
+                <locality>  </locality>
+                <city> </city>
+                <pincode> </pincode>
+            </address>
+        </restaurant>
+        <restaurant>
+            <name> </name>
+            <menu>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+            </menu>
+            <feedback> </feedback>
+            <address>
+                <locality>  </locality>
+                <city> </city>
+                <pincode> </pincode>
+            </address>
+        </restaurant>
+        <restaurant>
+            <name> </name>
+            <menu>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+                <menu_item>
+                    <name> </name>
+                    <price> </price>
+                </menu_item>
+            </menu>
+            <feedback> </feedback>
+            <address>
+                <locality>  </locality>
+                <city> </city>
+                <pincode> </pincode>
+            </address>
+        </restaurant>
+    </restaurants>
+    
+</food_delivery_system>
+    

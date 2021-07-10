@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu[
+<!ELEMENT menu (dish)+>
+<!ELEMENT dish (names,type,ingredients,recipe)>
+<!ELEMENT names (name)+>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT ingredients (ingredient)+>
+<!ELEMENT recipe (steps)+>
+<!ATTLIST recipe r_id ID #REQUIRED  >
+<!ELEMENT ingredient (name,quantity)+>
+<!ELEMENT steps (recipe | text)+>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+]>
+<menu>
+    <dish>
+        <names>
+            <name>"noodles"
+            </name>
+            
+        </names>
+        <type>"main"</type>
+        <ingredients>
+            <ingredient>
+                <name>"noodles"</name>
+                <quantity>1</quantity>
+            </ingredient>
+        </ingredients>
+        <recipe r_id="a1">
+            <steps>
+                <text>"cook"</text>
+            </steps>
+        </recipe>
+    </dish>
+</menu>
